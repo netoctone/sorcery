@@ -73,7 +73,6 @@ module Sorcery
           def add_provider_to_user(provider)
             provider_name = provider.to_sym
             @provider = Config.send(provider_name)
-            @provider.process_callback(params,session)
             @user_hash = @provider.get_user_hash
             config = user_class.sorcery_config
 
